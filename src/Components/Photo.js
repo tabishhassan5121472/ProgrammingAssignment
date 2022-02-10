@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import User from './User';
-const Users = props => {
+const Photo = props => {
     const [isLoading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
     getUsers = () => {
-        fetch('https://jsonplaceholder.typicode.com/users/')
+        fetch('https://jsonplaceholder.typicode.com/photos/')
             .then((response) => response.json())
             .then((json) => setUsers(json))
             .catch((error) => console.error(error))
@@ -26,7 +26,7 @@ const Users = props => {
                             ({ item }) =>
                                 <TouchableOpacity
                                     onPress={() =>
-                                        props.navigation.navigate('Album', {
+                                        props.navigation.navigate('Photo', {
                                             id: item.id
                                         })
                                     }
@@ -41,4 +41,4 @@ const Users = props => {
         </View>
     );
 };
-export default Users;
+export default Photo;
