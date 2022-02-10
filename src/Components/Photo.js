@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import User from './User';
+import Photos from './Photos';
 const Photo = props => {
     const [isLoading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
@@ -32,7 +32,7 @@ const Photo = props => {
                                     }
                                 >
                                     <View>
-                                        <User user={item} />
+                                        <Photos Photo={item} />
                                     </View>
                                 </TouchableOpacity>
                         }

@@ -1,5 +1,5 @@
 import React from 'react';
-import Screens from './Screens/index';
+import Screens from './Screens/StackNavigation';
 const Main = () => {
     return (
         <Screens />
