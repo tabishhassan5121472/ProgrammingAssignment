@@ -5,14 +5,15 @@ const Album = props => {
     const ids = props.navigation.getParam('id');
     const [isLoading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
-    const [propbv, setProp] = useState(ids);
 
     getUsers = () => {
         fetch('https://jsonplaceholder.typicode.com/Albums/')
             .then((response) => response.json())
             .then((json) => {
-                console.log(json);
-                json = json.filter((item) => item.userId == ids)
+                if (ids > 0) {
+                    json = json.filter((item) => item.userId == ids)
+                    console.log(json);
+                }
                 setUsers(json)
             })
             .catch((error) => console.error(error))

@@ -3,7 +3,8 @@ import { Text, ScrollView } from 'react-native';
 const GetAlbum = props => {
     return (
         <ScrollView>
-            <Text style={{ padding: 10, fontSize: 24, }}>{props.Album.title}</Text>
+            <Text style={{ padding: 10, fontSize: 24, }}>{props.Album.id} {props.Album.title}</Text>
+
         </ScrollView>
     );
 };
