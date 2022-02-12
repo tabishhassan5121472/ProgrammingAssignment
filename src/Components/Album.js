@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import Albums from './Albums'
+import { View, Text, FlatList, ToastAndroid, TouchableOpacity } from 'react-native';
+import GetAlbum from './GetAlbum'
 const Album = props => {
+    const ids = props.navigation.getParam('id');
     const [isLoading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
+    const [propbv, setProp] = useState(ids);
+
     getUsers = () => {
         fetch('https://jsonplaceholder.typicode.com/Albums/')
             .then((response) => response.json())
-            .then((json) => setUsers(json))
+            .then((json) => {
+                console.log(json);
+                json = json.filter((item) => item.userId == ids)
+                setUsers(json)
+            })
             .catch((error) => console.error(error))
             .finally(() => setLoading(false));
     }
     useEffect(() => {
+        console.log(ids);
         setLoading(true);
         getUsers();
     }, []);
+
     return (
         <View style={{ padding: 20 }}>
             {isLoading ? <Text>Loading...</Text> :
@@ -26,13 +35,15 @@ const Album = props => {
                             ({ item }) =>
                                 <TouchableOpacity
                                     onPress={() =>
+
                                         props.navigation.navigate('Photo', {
                                             id: item.id
                                         })
                                     }
                                 >
                                     <View>
-                                        <Albums Album={item} />
+
+                                        <GetAlbum Album={item} />
                                     </View>
                                 </TouchableOpacity>
                         }

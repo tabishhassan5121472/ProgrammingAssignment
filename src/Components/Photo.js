@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import Photos from './Photos';
+import GetPhoto from './GetPhoto';
 const Photo = props => {
     const [isLoading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
@@ -26,13 +26,13 @@ const Photo = props => {
                             ({ item }) =>
                                 <TouchableOpacity
                                     onPress={() =>
-                                        props.navigation.navigate('Photo', {
-                                            id: item.id
+                                        props.navigation.navigate('Show', {
+                                            url: item.url
                                         })
                                     }
                                 >
                                     <View>
-                                        <Photos Photo={item} />
+                                        <GetPhoto Photo={item} />
                                     </View>
                                 </TouchableOpacity>
                         }

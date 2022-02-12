@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
-import User from './User';
+import { View, Text, FlatList, TouchableOpacity, ToastAndroid } from 'react-native';
+import GetUser from './GetUser';
+
 const Users = props => {
+
+
     const [isLoading, setLoading] = useState(false);
     const [users, setUsers] = useState([]);
     getUsers = () => {
@@ -15,30 +18,33 @@ const Users = props => {
         setLoading(true);
         getUsers();
     }, []);
+
     return (
         <View style={{ padding: 20 }}>
             {isLoading ? <Text>Loading...</Text> :
                 (
                     <FlatList
+
                         data={users}
                         keyExtractor={({ id }) => id.toString()}
                         renderItem={
                             ({ item }) =>
                                 <TouchableOpacity
                                     onPress={() =>
+
                                         props.navigation.navigate('Album', {
                                             id: item.id
                                         })
                                     }
                                 >
                                     <View>
-                                        <User user={item} />
+                                        <GetUser user={item} />
                                     </View>
                                 </TouchableOpacity>
                         }
                     />
                 )}
-        </View>
+        </View >
     );
 };
 export default Users;
