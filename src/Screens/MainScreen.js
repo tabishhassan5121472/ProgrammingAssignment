@@ -23,8 +23,8 @@ const FullPhoto = props => {
     );
 };
 
-FullPhoto.navigationOptions = {
-    title: 'Full Photo'
+MainScrene.navigationOptions = {
+    title: 'Main Screen'
 };
 
 export default FullPhoto;
