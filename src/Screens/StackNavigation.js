@@ -6,6 +6,7 @@ import AlbumScreen from './AlbumScreen';
 import PhotoScreen from './PhotoScreen';
 import UserScreen from './UserScreen';
 import MainScreen from './MainScreen';
+
 const StackNavigator = createStackNavigator({
     Main: MainScreen,
     Home: UserScreen,
@@ -13,6 +14,7 @@ const StackNavigator = createStackNavigator({
     Photo: PhotoScreen,
     Show: FullPhoto,
 
-
 });
+
+
 export default createAppContainer(StackNavigator);

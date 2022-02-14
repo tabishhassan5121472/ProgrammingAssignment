@@ -1,8 +1,8 @@
 import React from 'react';
-import Screens from './Screens/StackNavigation';
+import SwitchNavigator from './Components/SwitchNavigator';
 const Main = () => {
     return (
-        <Screens />
+        <SwitchNavigator />
     );
 };
 export default Main;
