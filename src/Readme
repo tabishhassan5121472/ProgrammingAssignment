@@ -1,0 +1,8 @@
+Unit Tests:
+
+1. Application start with splash screen.
+2. Main Screen have 3 buttons User Screen, Album Screen and Photo Screen.
+3. User Screen will navigate to user list. User lists have necessary information (Id,Name and Email)
+4. Album Screen will navigate to album list. Album lists have information of Id and Album Name.
+5. Photo Screen will navigate to photo list.
+6. 
