@@ -2,7 +2,12 @@ Unit Tests:
 
 1. Application start with splash screen.
 2. Main Screen have 3 buttons User Screen, Album Screen and Photo Screen.
-3. User Screen will navigate to user list. User lists have necessary information (Id,Name and Email)
-4. Album Screen will navigate to album list. Album lists have information of Id and Album Name.
-5. Photo Screen will navigate to photo list.
-6. 
+3. User Screen will navigate to user list. User lists have necessary information (Id,Name and Email). 
+    i.  we click on any user in the list. It will navigate to Album of the user. 
+    ii. we click on any album. then it will navigate to the photo of the user.
+    iii.we click on any photo of the user. then it will navigate to full image. 
+4. Album Screen will navigate to album list. Album lists have information of Id and Album Name. 
+5. Photo Screen will navigate to photo list. Photo Lists have information of albumiId and photo. After clicking on any photo it will navigate to the Full image.
+
+6.Main Screen, User Screen , Photo Screen, Full Photo Screen navigate using stack navigation.
+7. All Screens and  Spalsh Screen navigate using switch navigation.
